@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الرضوان العالمية للاستثمار</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Cormorant+Garamond:wght@400;600;700&display=swap"
+        rel="stylesheet">
+<link rel="stylesheet" href="Styles/style.css">
+</head>
+
+<body class="loading">
+
+  <!-- ════ LOADER ════ -->
+    <div id="loader">
+        <img src="/Styles/Photos/Logo.jpeg" class="ld-logo" id="ld-logo-img"
+            onerror="this.style.display='none'; document.getElementById('ld-icon').style.display='flex'">
+        
+        <div id="ld-icon"
+            style="display:none;align-items:center;justify-content:center;width:140px;height:140px;background:linear-gradient(135deg,#8F7234,#C19E50);border-radius:16px;border: 2px solid var(--border-h);">
+            <i class="fa-solid fa-building-columns" style="font-size:3.5rem;color:#0F1216;"></i>
+        </div>
+        <div class="ld-bar">
+            <div class="ld-fill"></div>
+        </div>
+        <div class="ld-txt" id="ld-txt">الرضوان العالمية</div>
+    </div>
+
+    <!-- ════ PARTICLES ════ -->
+    <canvas id="cnv"></canvas>
+
+    <!-- ════ NAVBAR ════ -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="nav">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <div
+                    style="width:46px;height:46px;background:linear-gradient(135deg,#8F7234,#C19E50,#3A8B55);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                    <i class="fa-solid fa-building-columns" style="font-size:1.3rem;color:#0F1216;"></i>
+                </div>
+                <div>
+                    <span class="brand-txt" data-ar="الرضوان العالمية" data-en="AL Radwan Int'l">الرضوان العالمية</span>
+                    <span class="brand-sub" data-ar="للاستثمار • عُمان" data-en="Investment • Oman">للاستثمار •
+                        عُمان</span>
+                </div>
+            </a>
+            <div class="d-flex align-items-center gap-2 order-lg-last">
+                <button class="lang-btn" id="lang-toggle" onclick="toggleLang()">
+                    <i class="fa-solid fa-globe"></i>
+                    <span id="lang-label">EN</span>
+                </button>
+                <button class="navbar-toggler bg-transparent border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navmenu">
+                    <i class="fa-solid fa-bars" style="color:var(--gold);font-size:1.3rem;"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="navmenu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home" data-ar="الرئيسية"
+                            data-en="Home">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" data-ar="عن الشركة" data-en="About">عن
+                            الشركة</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services" data-ar="خدماتنا"
+                            data-en="Services">خدماتنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects" data-ar="أعمالنا"
+                            data-en="Portfolio">أعمالنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#technical" data-ar="المواصفات"
+                            data-en="Technical">المواصفات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#certifications" data-ar="الشهادات"
+                            data-en="Certs">الشهادات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#why" data-ar="لماذا نحن" data-en="Why Us">لماذا
+                            نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a>
+                    </li>
+                </ul>
+                <a href="#contact" class="btn-gd nav-cta mt-2 mt-lg-0" data-ar="اطلب عرض سعر" data-en="Get a Quote">اطلب
+                    عرض سعر</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════
+  SECTION 1 — HERO
+═══════════════════════════════════════ -->
+    <section id="home">
+        <div class="hero-grid"></div>
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <!-- LEFT -->
+                <div class="col-lg-6 hero-content">
+                    <div class="hero-badge">
+                        <span class="dot"></span>
+                        <span data-ar="منشآت فولاذية • سلطنة عمان" data-en="Steel Structures • Sultanate of Oman">منشآت
+                            فولاذية • سلطنة عمان</span>
+                    </div>
+                    <h1 class="hero-title">
+                        <span data-ar="نبني المستقبل" data-en="Building the Future">نبني المستقبل</span>
+                        <span class="grad" data-ar="بفولاذ لا يُقهر" data-en="With Unbreakable Steel">بفولاذ لا
+                            يُقهر</span>
+                    </h1>
+                    <p class="hero-sub"
+                        data-ar="شركة الرضوان العالمية للاستثمار — رائدة في تصميم وتصنيع وتركيب المنشآت الفولاذية المتكاملة في سلطنة عمان. جودة ISO، تنفيذ دقيق، ومشاريع تدوم للأجيال."
+                        data-en="AL Radwan International Investment — a leader in design, manufacturing, and installation of integrated steel structures in Oman. ISO quality, precise execution, and projects built to last generations.">
+                        شركة الرضوان العالمية للاستثمار — رائدة في تصميم وتصنيع وتركيب المنشآت الفولاذية المتكاملة في
+                        سلطنة عمان. جودة ISO، تنفيذ دقيق، ومشاريع تدوم للأجيال.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn-gd">
+                            <i class="fa-solid fa-eye"></i>
+                            <span data-ar="شاهد أعمالنا" data-en="View Portfolio">شاهد أعمالنا</span>
+                        </a>
+                        <a href="#contact" class="btn-ol">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</span>
+                        </a>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-row">
+                            <div class="stat-item">
+                                <div class="stat-l" style="font-size:1.1rem; font-weight:700; color:var(--gold);" data-ar="مشاريع متنوعة" data-en="Diverse Projects">مشاريع متنوعة</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-l" style="font-size:1.1rem; font-weight:700; color:var(--gold);" data-ar="تنفيذ مشاريع تجارية وصناعية" data-en="Comm. & Industrial Projects">تنفيذ مشاريع تجارية وصناعية</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-l" style="font-size:1.1rem; font-weight:700; color:var(--gold);" data-ar="حلول متكاملة" data-en="Integrated Solutions">حلول متكاملة</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- RIGHT -->
+                <div class="col-lg-6 hero-visual">
+                    <div class="float-chips">
+                        <div class="chip">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span class="chip-txt" data-ar="ضمان 10 سنوات" data-en="10 Year Warranty">ضمان 10
+                                سنوات</span>
+                        </div>
+                    </div>
+                    <div class="vis-card">
+                        <div class="vis-tag">
+                            <span class="vis-live"></span>
+                            <span data-ar="نشاط المشاريع" data-en="Project Activity">نشاط المشاريع</span>
+                        </div>
+                        <div class="vis-title" data-ar="أحدث المشاريع" data-en="Latest Projects">أحدث المشاريع</div>
+                        <div class="vis-sub" data-ar="قيد التنفيذ الآن في سلطنة عمان"
+                            data-en="Currently executing in Sultanate of Oman">قيد التنفيذ الآن في سلطنة عمان</div>
+                        <div class="vis-row">
+                            <div class="vis-mini">
+                                <span class="vis-mini-n">3</span>
+                                <div class="vis-mini-l" data-ar="مشروع نشط" data-en="Active">مشروع نشط</div>
+                            </div>
+                            <div class="vis-mini">
+                                <span class="vis-mini-n">8K+</span>
+                                <div class="vis-mini-l" data-ar="م² منجز" data-en="m² Done">م² منجز</div>
+                            </div>
+                            <div class="vis-mini">
+                                <span class="vis-mini-n">100%</span>
+                                <div class="vis-mini-l" data-ar="معدل رضا" data-en="Satisfaction">معدل رضا</div>
+                            </div>
+                        </div>
+                        <img src="https://picsum.photos/seed/steelfactory/600/180" alt="steel factory" class="vis-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glow-div"></div>
+
+    <!-- ═══════════════════════════════════════
+  SECTION 2 — ABOUT
+═══════════════════════════════════════ -->
+    <section id="about" class="sec">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-5 reveal-l">
+                    <div class="about-img-wrap">
+                        <img src="/Styles/Photos/Logo.jpeg" alt="Al Radwan"
+                            style="height:450px;object-fit:cover;border-radius:12px;">
+                    </div>
+                </div>
+                <div class="col-lg-7 reveal-r" style="padding-right:40px;">
+                    <div class="eyebrow" data-ar="من نحن" data-en="About Us">من نحن</div>
+                    <h2 class="sec-ttl" data-ar="رؤية تصنع <span class='gd'>المستقبل</span>"
+                        data-en="A Vision That Builds the <span class='gd'>Future</span>">رؤية تصنع <span
+                            class="gd">المستقبل</span></h2>
+                    <p style="color:var(--muted);line-height:1.9;margin:18px 0;"
+                        data-ar="تأسست شركة الرضوان العالمية للاستثمار لتكون المرجع الأول في منشآت البناء الفولاذي بسلطنة عمان. نؤمن بأن الهندسة ليست مجرد أرقام، بل هي فن يُبنى بالدقة والالتزام والشغف."
+                        data-en="AL Radwan International Investment was established to be the premier reference for steel construction in Oman. We believe engineering is not just numbers — it's an art built with precision, commitment, and passion.">
+                        تأسست شركة الرضوان العالمية للاستثمار لتكون المرجع الأول في منشآت البناء الفولاذي بسلطنة عمان.
+                        نؤمن بأن الهندسة ليست مجرد أرقام، بل هي فن يُبنى بالدقة والالتزام والشغف.
+                    </p>
+                    <ul class="exp-list mt-2 mb-4" style="list-style:none; padding:0;">
+                        <li style="margin-bottom:10px;"><i class="fa-solid fa-circle-check" style="color:var(--gold); margin-left:8px;"></i> <span data-ar="خبرة عملية تمتد لأكثر من 15 عامًا" data-en="Practical experience of over 15 years">خبرة عملية تمتد لأكثر من 15 عامًا</span></li>
+                        <li style="margin-bottom:10px;"><i class="fa-solid fa-circle-check" style="color:var(--gold); margin-left:8px;"></i> <span data-ar="خبرة واسعة في قطاع المقاولات والإنشاءات" data-en="Extensive experience in contracting and construction">خبرة واسعة في قطاع المقاولات والإنشاءات</span></li>
+                        <li style="margin-bottom:10px;"><i class="fa-solid fa-circle-check" style="color:var(--gold); margin-left:8px;"></i> <span data-ar="فريق متخصص بخبرات متراكمة" data-en="Specialized team with accumulated expertise">فريق متخصص بخبرات متراكمة</span></li>
+                    </ul>
+                    <blockquote class="fancy">
+                        <span
+                            data-ar='"فخرنا يكمن في معرفة أن ما نبنيه سيدوم لأجيال. نحن ملتزمون بتحقيق الرؤية من خلال التخطيط المؤسسي وتطوير التحالفات الاستراتيجية."'
+                            data-en='"Our pride is knowing that what we build will last for generations. We are committed to achieving the vision through institutional planning and developing strategic alliances."'>"فخرنا
+                            يكمن في معرفة أن ما نبنيه سيدوم لأجيال. نحن ملتزمون بتحقيق الرؤية من خلال التخطيط المؤسسي
+                            وتطوير التحالفات الاستراتيجية."</span>
+                        <footer class="ceo mt-2">
+                            <span data-ar="رضا رضوان — المؤسس والمدير التنفيذي" data-en="Rida Radwan — Founder & CEO">رضا
+                                رضوان — المؤسس والمدير التنفيذي</span>
+                        </footer>
+                    </blockquote>
+                    <div class="about-card-row">
+                        <div class="ab-card">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <h6 data-ar="رؤيتنا" data-en="Our Vision">رؤيتنا</h6>
+                            <p data-ar="أن نكون الخيار الأول في الإنشاءات الفولاذية بمنطقة الخليج."
+                                data-en="To be the first choice in steel construction across the Gulf region.">أن نكون
+                                الخيار الأول في الإنشاءات الفولاذية بمنطقة الخليج.</p>
+                        </div>
+                        <div class="ab-card">
+                            <i class="fa-solid fa-handshake"></i>
+                            <h6 data-ar="رسالتنا" data-en="Our Mission">رسالتنا</h6>
+                            <p data-ar="تقديم حلول هندسية متكاملة بمعايير عالمية واحترافية عالية."
+                                data-en="Delivering integrated engineering solutions with global standards and high professionalism.">
+                                تقديم حلول هندسية متكاملة بمعايير عالمية واحترافية عالية.</p>
+                        </div>
+                        <div class="ab-card">
+                            <i class="fa-solid fa-gem"></i>
+                            <h6 data-ar="قيمنا" data-en="Our Values">قيمنا</h6>
+                            <p data-ar="الجودة، النزاهة، الابتكار، والالتزام بالمواعيد."
+                                data-en="Quality, integrity, innovation, and commitment to timelines.">الجودة، النزاهة،
+                                الابتكار، والالتزام بالمواعيد.</p>
+                        </div>
+                        <div class="ab-card">
+                            <i class="fa-solid fa-users"></i>
+                            <h6 data-ar="فريقنا" data-en="Our Team">فريقنا</h6>
+                            <p data-ar="مهندسون ذوو خبرة عالية من مختلف التخصصات."
+                                data-en="Highly experienced engineers from various specializations.">مهندسون ذوو خبرة
+                                عالية من مختلف التخصصات.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glow-div"></div>
+
+    <!-- ═══════════════════════════════════════
+  SECTION 3 — SERVICES
+═══════════════════════════════════════ -->
+    <section id="services" class="sec sec-alt">
+        <div class="container">
+            <div class="sec-hd reveal">
+                <div class="eyebrow" data-ar="ماذا نقدم" data-en="What We Offer">ماذا نقدم</div>
+                <h2 class="sec-ttl" data-ar="خدماتنا <span class='gd'>المتكاملة</span>"
+                    data-en="Our <span class='gd'>Integrated</span> Services">خدماتنا <span class="gd">المتكاملة</span>
+                </h2>
+                <p class="sec-dsc" data-ar="نقدم منظومة خدمات شاملة من الفكرة إلى التسليم بأعلى معايير الجودة العالمية."
+                    data-en="We provide a comprehensive service ecosystem from concept to delivery, with the highest international quality standards.">
+                    نقدم منظومة خدمات شاملة من الفكرة إلى التسليم بأعلى معايير الجودة العالمية.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.1s">
+                    <div class="svc-card">
+                        <div class="svc-ico"><i class="fa-solid fa-compass-drafting"></i></div>
+                        <h4 data-ar="التصميم الهندسي" data-en="Engineering Design">التصميم الهندسي</h4>
+                        <p data-ar="تصاميم ثلاثية الأبعاد وحسابات إنشائية دقيقة باستخدام أحدث البرمجيات الهندسية المعتمدة دولياً."
+                            data-en="3D designs and precise structural calculations using the latest internationally certified engineering software.">
+                            تصاميم ثلاثية الأبعاد وحسابات إنشائية دقيقة باستخدام أحدث البرمجيات الهندسية المعتمدة
+                            دولياً.</p>
+                        <a href="https://wa.me/96897000326" target="_blank" class="svc-more" style="text-decoration:none;" data-ar="اعرف أكثر →" data-en="Learn more →">اعرف أكثر →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.2s">
+                    <div class="svc-card">
+                        <div class="svc-ico"><i class="fa-solid fa-industry"></i></div>
+                        <h4 data-ar="الإنتاج والتصنيع" data-en="Production & Manufacturing">الإنتاج والتصنيع</h4>
+                        <p data-ar="مصانعنا مجهزة بأحدث تقنيات القص واللحام لإنتاج الهياكل الفولاذية بدقة متناهية."
+                            data-en="Our factories are equipped with the latest cutting and welding technologies for producing steel structures with ultimate precision.">
+                            مصانعنا مجهزة بأحدث تقنيات القص واللحام لإنتاج الهياكل الفولاذية بدقة متناهية.</p>
+                        <a href="https://wa.me/96897000326" target="_blank" class="svc-more" style="text-decoration:none;" data-ar="اعرف أكثر →" data-en="Learn more →">اعرف أكثر →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.3s">
+                    <div class="svc-card">
+                        <div class="svc-ico"><i class="fa-solid fa-truck-fast"></i></div>
+                        <h4 data-ar="الحلول السريعة" data-en="Fast Track Solutions">الحلول السريعة</h4>
+                        <p data-ar="نظام Fast Track للمشاريع المستعجلة يضمن التسليم في أقصر وقت دون المساس بالجودة."
+                            data-en="Our Fast Track system for urgent projects guarantees delivery in the shortest time without compromising quality.">
+                            نظام Fast Track للمشاريع المستعجلة يضمن التسليم في أقصر وقت دون المساس بالجودة.</p>
+                        <a href="https://wa.me/96897000326" target="_blank" class="svc-more" style="text-decoration:none;" data-ar="اعرف أكثر →" data-en="Learn more →">اعرف أكثر →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.1s">
+                    <div class="svc-card">
+                        <div class="svc-ico"><i class="fa-solid fa-microscope"></i></div>
+                        <h4 data-ar="مراقبة الجودة" data-en="Quality Control">مراقبة الجودة</h4>
+                        <p data-ar="فحص دقيق في كل مرحلة من مراحل الإنتاج لضمان مطابقة المنتج للمواصفات الدولية."
+                            data-en="Rigorous inspection at every production stage to ensure product compliance with international specifications.">
+                            فحص دقيق في كل مرحلة من مراحل الإنتاج لضمان مطابقة المنتج للمواصفات الدولية.</p>
+                        <a href="https://wa.me/96897000326" target="_blank" class="svc-more" style="text-decoration:none;" data-ar="اعرف أكثر →" data-en="Learn more →">اعرف أكثر →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.2s">
+                    <div class="svc-card">
+                        <div class="svc-ico"><i class="fa-solid fa-warehouse"></i></div>
+                        <h4 data-ar="أنظمة الأرفف (Racking)" data-en="Racking Systems">أنظمة الأرفف (Racking)</h4>
+                        <p data-ar="تصميم وتركيب أنظمة تخزين متكاملة Drive-In، Selective، وPushback للمستودعات."
+                            data-en="Design and installation of integrated storage systems: Drive-In, Selective, and Pushback for warehouses.">
+                            تصميم وتركيب أنظمة تخزين متكاملة Drive-In، Selective، وPushback للمستودعات.</p>
+                        <a href="https://wa.me/96897000326" target="_blank" class="svc-more" style="text-decoration:none;" data-ar="اعرف أكثر →" data-en="Learn more →">اعرف أكثر →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.3s">
+                    <div class="svc-card">
+                        <div class="svc-ico"><i class="fa-solid fa-snowflake"></i></div>
+                        <h4 data-ar="غرف التبريد والعزل" data-en="Cold Rooms & Insulation">غرف التبريد والعزل</h4>
+                        <p data-ar="تركيب غرف التبريد والعوازل الحرارية عالية الكفاءة لمختلف القطاعات الصناعية والغذائية."
+                            data-en="Installation of cold rooms and high-efficiency thermal insulation for various industrial and food sectors.">
+                            تركيب غرف التبريد والعوازل الحرارية عالية الكفاءة لمختلف القطاعات الصناعية والغذائية.</p>
+                        <a href="https://wa.me/96897000326" target="_blank" class="svc-more" style="text-decoration:none;" data-ar="اعرف أكثر →" data-en="Learn more →">اعرف أكثر →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glow-div"></div>
+
+    <!-- ═══════════════════════════════════════
+  SECTION 4 — PORTFOLIO
+═══════════════════════════════════════ -->
+    <section id="projects" class="sec">
+        <div class="container">
+            <div class="sec-hd reveal">
+                <div class="eyebrow" data-ar="معرض الأعمال" data-en="Our Portfolio">معرض الأعمال</div>
+                <h2 class="sec-ttl" data-ar="مشاريعنا <span class='gd'>المميزة</span>"
+                    data-en="Our <span class='gd'>Featured</span> Projects">مشاريعنا <span class="gd">المميزة</span>
+                </h2>
+                <p class="sec-dsc" data-ar="نفتخر بتنفيذ كبرى المشاريع الصناعية والتجارية في سلطنة عمان."
+                    data-en="We take pride in executing major industrial and commercial projects in the Sultanate of Oman.">
+                    نفتخر بتنفيذ كبرى المشاريع الصناعية والتجارية في سلطنة عمان.</p>
+            </div>
+            <div class="filter-tabs reveal">
+                <button class="ftab active" data-filter="all" data-ar="الكل" data-en="All">الكل</button>
+                <button class="ftab" data-filter="industrial" data-ar="صناعي" data-en="Industrial">صناعي</button>
+                <button class="ftab" data-filter="commercial" data-ar="تجاري" data-en="Commercial">تجاري</button>
+            </div>
+            <div class="port-grid" id="portGrid">
+
+                <!-- ═══ INDUSTRIAL GROUPS ═══ -->
+
+                <div class="port-group" data-cat="industrial">
+                    <div class="port-group-header"> 
+                        <div class="port-group-label-tag"><i class="fa-solid fa-industry"></i> <span data-ar="صناعي" data-en="Industrial">صناعي</span></div>
+                        <h3 class="port-group-title" data-ar="مصنع ألبان المدهش – هيكل فولاذي" data-en="Al Modhesh Dairy Factory – Steel Structure">مصنع ألبان المدهش – هيكل فولاذي</h3>
+                        <p class="port-group-sub" data-ar="مصنع ألبان المدهش – هيكل فولاذي متكامل | صلالة • 11,000 م²" data-en="Al Modhesh Dairy Factory – Integrated Steel Structure | Salalah • 11,000 m²">مصنع ألبان المدهش – هيكل فولاذي متكامل | صلالة • 11,000 م²</p>
+                    </div>
+                    <div class="port-group-cards">
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ml1.jpeg" alt="Dairy 1">
+                            <div class="pgcard-num">1</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="ألبان المدهش" data-en="Al Modhesh Dairy">ألبان المدهش</div>
+                                <h5 data-ar="الهيكل الفولاذي الرئيسي" data-en="Main Steel Structure">الهيكل الفولاذي الرئيسي</h5>
+                                <span data-ar="صلالة – سلطنة عمان" data-en="Salalah – Oman">صلالة – سلطنة عمان</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ml2.jpeg" alt="Dairy 2">
+                            <div class="pgcard-num">2</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="ألبان المدهش" data-en="Al Modhesh Dairy">ألبان المدهش</div>
+                                <h5 data-ar="أعمدة وروافد الهيكل" data-en="Columns & Rafters">أعمدة وروافد الهيكل</h5>
+                                <span data-ar="مساحة 11,000 م²" data-en="Area 11,000 m²">مساحة 11,000 م²</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ml3.jpeg" alt="Dairy 3">
+                            <div class="pgcard-num">3</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="ألبان المدهش" data-en="Al Modhesh Dairy">ألبان المدهش</div>
+                                <h5 data-ar="التغطية والواجهات" data-en="Cladding & Facades">التغطية والواجهات</h5>
+                                <span data-ar="تسليم احترافي" data-en="Professional Handover">تسليم احترافي</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ml4.jpeg" alt="Dairy 4">
+                            <div class="pgcard-num">4</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="ألبان المدهش" data-en="Al Modhesh Dairy">ألبان المدهش</div>
+                                <h5 data-ar="المشروع مكتمل" data-en="Project Completed">المشروع مكتمل</h5>
+                                <span data-ar="صلالة 2024" data-en="Salalah 2024">صلالة 2024</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/v1.mp4"></video>
+                            <div class="pgcard-num">5</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="ألبان المدهش" data-en="Al Modhesh Dairy">ألبان المدهش</div>
+                                <h5 data-ar="تصوير جوي للمشروع" data-en="Aerial View">تصوير جوي للمشروع</h5>
+                                <span data-ar="صلالة" data-en="Salalah">صلالة</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/v2.mp4"></video>
+                            <div class="pgcard-num">6</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="ألبان المدهش" data-en="Al Modhesh Dairy">ألبان المدهش</div>
+                                <h5 data-ar="أعمال التركيب" data-en="Installation Works">أعمال التركيب</h5>
+                                <span data-ar="تنفيذ احترافي" data-en="Professional Execution">تنفيذ احترافي</span>
+                            </div>
+                        </div>  
+                    </div> 
+                </div>
+
+                <!-- ═══ Duqm Solar Structure ═══ -->
+                <div class="port-group" data-cat="industrial">
+                    <div class="port-group-header">
+                        <div class="port-group-label-tag"><i class="fa-solid fa-industry"></i> <span data-ar="صناعي" data-en="Industrial">صناعي</span></div>
+                        <h3 class="port-group-title" data-ar="الدقم – أعمال تركيب هيكل الطاقة الشمسية" data-en="Duqm – Solar Structure Installation">الدقم – أعمال تركيب هيكل الطاقة الشمسية</h3>
+                        <p class="port-group-sub" data-ar="تركيب هيكل للطاقة الشمسية – الدقم | هياكل فولاذية للألواح الشمسية" data-en="Solar Structure Installation – Duqm | Steel Frames for Solar Panels">تركيب هيكل للطاقة الشمسية – الدقم | هياكل فولاذية للألواح الشمسية</p>
+                    </div>
+                    <div class="port-group-cards">
+                        <div class="pgcard"><img src="/Styles/Photos/ta1.jpeg" alt="Solar 1" loading="lazy">
+                            <div class="pgcard-num">1</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ta2.jpeg" alt="Solar 2" loading="lazy">
+                            <div class="pgcard-num">2</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ta3.jpeg" alt="Solar 3" loading="lazy">
+                            <div class="pgcard-num">3</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ta4.jpeg" alt="Solar 4" loading="lazy">
+                            <div class="pgcard-num">4</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ta5.jpeg" alt="Solar 5" loading="lazy">
+                            <div class="pgcard-num">5</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ta6.jpeg" alt="Solar 6" loading="lazy">
+                            <div class="pgcard-num">6</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ta7.jpeg" alt="Solar 7" loading="lazy">
+                            <div class="pgcard-num">7</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ta8.jpeg" alt="Solar 8" loading="lazy">
+                            <div class="pgcard-num">8</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                    </div>
+                </div>
+           <!-- Project 3  -->
+                <div class="port-group" data-cat="industrial">
+                    <div class="port-group-header">
+                        <div class="port-group-label-tag"><i class="fa-solid fa-industry"></i> <span data-ar="صناعي" data-en="Industrial">صناعي</span></div>
+                        <h3 class="port-group-title" data-ar="مصنع ثلج -موقع بدبد" data-en="Ice Factory Site -Bidbid">مصنع ثلج - موقع بدبد</h3>
+                        <p class="port-group-sub" data-ar="مصنع ثلج – بدبد | هيكل فولاذي متكامل" data-en="Ice Factory – Bidbid Industrial Area | Integrated Steel Structure">مصنع ثلج – بدبد | هيكل فولاذي متكامل</p>
+                    </div>
+                    <div class="port-group-cards">
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline preload="metadata" src="/Styles/Photos/se1.mp4"></video>
+                            <div class="pgcard-num">1</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline preload="metadata" src="/Styles/Photos/se2.mp4"></video>
+                            <div class="pgcard-num">2</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline preload="metadata" src="/Styles/Photos/se3.mp4"></video>
+                            <div class="pgcard-num">3</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline preload="metadata" src="/Styles/Photos/se4.mp4"></video>
+                            <div class="pgcard-num">4</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- ═══ COMMERCIAL GROUPS ═══ -->
+                <!-- ═══ Al Araimi Mall ═══ -->
+                <div class="port-group" data-cat="commercial">
+                    <div class="port-group-header">
+                        <div class="port-group-label-tag commercial"><i class="fa-solid fa-store"></i> <span data-ar="تجاري" data-en="Commercial">تجاري</span></div>
+                        <h3 class="port-group-title" data-ar="مول العريمي – مشروع صالة التزحلق" data-en="Al Araimi Mall – Skating Rink Project">مول العريمي – مشروع صالة التزحلق</h3>
+                        <p class="port-group-sub" data-ar="إنشاء صالة تزحلق جليدي – مول العريمي الخوض | مساحة 1,000 م²" data-en="Skating Rink Construction – Al Araimi Mall | Area 1,000 m²">إنشاء صالة تزحلق جليدي – مول العريمي الخوض | مساحة 1,000 م²</p>
+                    </div>
+                    <div class="port-group-cards">
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/to1.jpeg" alt="Araimi 1">
+                            <div class="pgcard-num">1</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="صالة العريمي" data-en="Al Araimi Rink">صالة العريمي</div>
+                                <h5 data-ar="أعمال التبريد" data-en="Cooling Works">أعمال التبريد</h5>
+                                <span data-ar="تركيب الأنابيب" data-en="Pipe Installation">تركيب الأنابيب</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/to2.jpeg" alt="Araimi 2">
+                            <div class="pgcard-num">2</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="صالة العريمي" data-en="Al Araimi Rink">صالة العريمي</div>
+                                <h5 data-ar="تجهيز الأرضية" data-en="Floor Prep">تجهيز الأرضية</h5>
+                                <span data-ar="عزل حراري" data-en="Thermal Insulation">عزل حراري</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/to3.jpeg" alt="Araimi 3">
+                            <div class="pgcard-num">3</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="صالة العريمي" data-en="Al Araimi Rink">صالة العريمي</div>
+                                <h5 data-ar="صب الخرسانة" data-en="Concrete Pouring">صب الخرسانة</h5>
+                                <span data-ar="دقة في المنسوب" data-en="Level Precision">دقة في المنسوب</span>
+                            </div>
+                        </div>
+                        <!-- Videos -->
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/tov1.mp4"></video>
+                            <div class="pgcard-num">4</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="صالة العريمي" data-en="Al Araimi Rink">صالة العريمي</div>
+                                <h5 data-ar="فيديو أعمال التركيب" data-en="Installation Video">فيديو أعمال التركيب</h5>
+                                <span data-ar="مراحل العمل" data-en="Work Phases">مراحل العمل</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/tov2.mp4"></video>
+                            <div class="pgcard-num">5</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="صالة العريمي" data-en="Al Araimi Rink">صالة العريمي</div>
+                                <h5 data-ar="فيديو مراحل التنفيذ" data-en="Execution Phases">فيديو مراحل التنفيذ</h5>
+                                <span data-ar="دقة في التنفيذ" data-en="Precision Work">دقة في التنفيذ</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/tov3.mp4"></video>
+                            <div class="pgcard-num">6</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="صالة العريمي" data-en="Al Araimi Rink">صالة العريمي</div>
+                                <h5 data-ar="فيديو التجهيزات" data-en="Fit-out Video">فيديو التجهيزات</h5>
+                                <span data-ar="تجهيزات داخلية" data-en="Interior Fit-out">تجهيزات داخلية</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/tov4.mp4"></video>
+                            <div class="pgcard-num">7</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="صالة العريمي" data-en="Al Araimi Rink">صالة العريمي</div>
+                                <h5 data-ar="فيديو الشكل النهائي" data-en="Final Result Video">فيديو الشكل النهائي</h5>
+                                <span data-ar="المشروع مكتملاً" data-en="Project Completed">المشروع مكتملاً</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══ Al Araimi Boulevard Mall ═══ -->
+                <div class="port-group" data-cat="commercial">
+                    <div class="port-group-header">
+                        <div class="port-group-label-tag commercial"><i class="fa-solid fa-store"></i> <span data-ar="تجاري" data-en="Commercial">تجاري</span></div>
+                        <h3 class="port-group-title" data-ar="مول العريمي بوليفارد – أعمال الإيبوكسي والعزل" data-en="Al Araimi Boulevard Mall – Epoxy & Waterproofing">مول العريمي بوليفارد – أعمال الإيبوكسي والعزل</h3>
+                        <p class="port-group-sub" data-ar="مول العريمي بوليفارد – أعمال الإيبوكسي والعزل المائي ومعالجة الخرسانة" data-en="Al Araimi Boulevard – Epoxy, Waterproofing & Concrete Repair">مول العريمي بوليفارد – أعمال الإيبوكسي والعزل المائي ومعالجة الخرسانة</p>
+                    </div>
+                    <div class="port-group-cards">
+                        <!-- Images -->
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ma21.jpeg" alt="Boulevard 1" loading="lazy">
+                            <div class="pgcard-num">1</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ma22.jpeg" alt="Boulevard 2" loading="lazy">
+                            <div class="pgcard-num">2</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/ma23.jpeg" alt="Boulevard 3" loading="lazy">
+                            <div class="pgcard-num">3</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <!-- Videos -->
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline preload="metadata" src="/Styles/Photos/ma1.mp4"></video>
+                            <div class="pgcard-num">4</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline preload="metadata" src="/Styles/Photos/ma2.mp4"></video>
+                            <div class="pgcard-num">5</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline preload="metadata" src="/Styles/Photos/ma3.mp4"></video>
+                            <div class="pgcard-num">6</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline preload="metadata" src="/Styles/Photos/ma4.mp4"></video>
+                            <div class="pgcard-num">7</div>
+                            <div class="pgcard-ov"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══ FXR Mobile Shop ═══ -->
+                <div class="port-group" data-cat="commercial">
+                    <div class="port-group-header">
+                        <div class="port-group-label-tag commercial"><i class="fa-solid fa-store"></i> <span data-ar="تجاري" data-en="Commercial">تجاري</span></div>
+                        <h3 class="port-group-title" data-ar="محل FXR للهواتف – بانوراما مول" data-en="FXR Mobile Shop – Panorama Mall">محل FXR للهواتف – بانوراما مول</h3>
+                        <p class="port-group-sub" data-ar="ديكور وتجهيز محل FXR للهواتف – بانوراما مول" data-en="Fit-out and Decor for FXR Mobile Shop – Panorama Mall">ديكور وتجهيز محل FXR للهواتف – بانوراما مول</p>
+                    </div>
+                    <div class="port-group-cards">
+                        <!-- Images -->
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/pho1.jpeg" alt="FXR 1">
+                            <div class="pgcard-num">1</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="محل FXR" data-en="FXR Mobile">محل FXR</div>
+                                <h5 data-ar="تصميم وتجهيز المحل" data-en="Shop Design & Fit-out">تصميم وتجهيز المحل</h5>
+                                <span data-ar="بانوراما مول" data-en="Panorama Mall">بانوراما مول</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/pho2.jpeg" alt="FXR 2">
+                            <div class="pgcard-num">2</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="محل FXR" data-en="FXR Mobile">محل FXR</div>
+                                <h5 data-ar="الديكور الداخلي" data-en="Interior Decor">الديكور الداخلي</h5>
+                                <span data-ar="تنفيذ احترافي" data-en="Professional Execution">تنفيذ احترافي</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <img src="/Styles/Photos/pho3.jpeg" alt="FXR 3">
+                            <div class="pgcard-num">3</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="محل FXR" data-en="FXR Mobile">محل FXR</div>
+                                <h5 data-ar="المحل جاهز للافتتاح" data-en="Ready for Opening">المحل جاهز للافتتاح</h5>
+                                <span data-ar="تسليم في الموعد" data-en="On-Time Delivery">تسليم في الموعد</span>
+                            </div>
+                        </div>
+                        <!-- Videos -->
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/phv1.mp4"></video>
+                            <div class="pgcard-num">4</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="محل FXR" data-en="FXR Mobile">محل FXR</div>
+                                <h5 data-ar="فيديو التجهيزات" data-en="Fit-out Video">فيديو التجهيزات</h5>
+                                <span data-ar="أعمال الديكور" data-en="Decor Works">أعمال الديكور</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/phv2.mp4"></video>
+                            <div class="pgcard-num">5</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="محل FXR" data-en="FXR Mobile">محل FXR</div>
+                                <h5 data-ar="فيديو مراحل التنفيذ" data-en="Execution Phases">فيديو مراحل التنفيذ</h5>
+                                <span data-ar="دقة العمل" data-en="Work Precision">دقة العمل</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/phv3.mp4"></video>
+                            <div class="pgcard-num">6</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="محل FXR" data-en="FXR Mobile">محل FXR</div>
+                                <h5 data-ar="فيديو الإضاءة" data-en="Lighting Video">فيديو الإضاءة</h5>
+                                <span data-ar="تنسيق الألوان" data-en="Color Coordination">تنسيق الألوان</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/phv4.mp4"></video>
+                            <div class="pgcard-num">7</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="محل FXR" data-en="FXR Mobile">محل FXR</div>
+                                <h5 data-ar="فيديو الشكل النهائي" data-en="Final View Video">فيديو الشكل النهائي</h5>
+                                <span data-ar="تسليم نهائي" data-en="Final Handover">تسليم نهائي</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══ Elevator Shaft ═══ -->
+                <div class="port-group" data-cat="commercial">
+                    <div class="port-group-header">
+                        <div class="port-group-label-tag commercial"><i class="fa-solid fa-store"></i> <span data-ar="تجاري" data-en="Commercial">تجاري</span></div>
+                        <h3 class="port-group-title" data-ar="هيكل الأسانسير - 4 طوابق" data-en="Elevator Shaft - 4 Floors">هيكل الأسانسير - 4 طوابق</h3>
+                        <p class="port-group-sub" data-ar="إنشاء هيكل معدني لأسانسير 4 طوابق – تنفيذ هندسي دقيق" data-en="Steel Structure for Elevator Shaft – 4 Floors – Precision Engineering">إنشاء هيكل معدني لأسانسير 4 طوابق – تنفيذ هندسي دقيق</p>
+                    </div>
+                    <div class="port-group-cards">
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/as1.mp4"></video>
+                            <div class="pgcard-num">1</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="هيكل الأسانسير" data-en="Elevator Structure">هيكل الأسانسير</div>
+                                <h5 data-ar="تجهيز الموقع" data-en="Site Prep">تجهيز الموقع</h5>
+                                <span data-ar="بئر المصعد - 4 طوابق" data-en="Elevator Shaft - 4 Floors">بئر المصعد - 4 طوابق</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/as2.mp4"></video>
+                            <div class="pgcard-num">2</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="هيكل الأسانسير" data-en="Elevator Structure">هيكل الأسانسير</div>
+                                <h5 data-ar="تركيب الهيكل" data-en="Installation">تركيب الهيكل</h5>
+                                <span data-ar="دقة هندسية عالية" data-en="High Precision">دقة هندسية عالية</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/as3.mp4"></video>
+                            <div class="pgcard-num">3</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="هيكل الأسانسير" data-en="Elevator Structure">هيكل الأسانسير</div>
+                                <h5 data-ar="أعمال التلحيم" data-en="Welding">أعمال التلحيم</h5>
+                                <span data-ar="تنفيذ احترافي" data-en="Professional Execution">تنفيذ احترافي</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/as4.mp4"></video>
+                            <div class="pgcard-num">4</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="هيكل الأسانسير" data-en="Elevator Structure">هيكل الأسانسير</div>
+                                <h5 data-ar="مراحل الرفع" data-en="Lifting Phases">مراحل الرفع</h5>
+                                <span data-ar="استخدام معدات متطورة" data-en="Advanced Equipment">استخدام معدات متطورة</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/as5.mp4"></video>
+                            <div class="pgcard-num">5</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="هيكل الأسانسير" data-en="Elevator Structure">هيكل الأسانسير</div>
+                                <h5 data-ar="تثبيت الدعامات" data-en="Supports">تثبيت الدعامات</h5>
+                                <span data-ar="تثبيت آمن ومستقر" data-en="Secure Fastening">تثبيت آمن ومستقر</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/as6.mp4"></video>
+                            <div class="pgcard-num">6</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="هيكل الأسانسير" data-en="Elevator Structure">هيكل الأسانسير</div>
+                                <h5 data-ar="التفتيش الفني" data-en="Inspection">التفتيش الفني</h5>
+                                <span data-ar="مطابقة المواصفات" data-en="Specification Match">مطابقة المواصفات</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/as7.mp4"></video>
+                            <div class="pgcard-num">7</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="هيكل الأسانسير" data-en="Elevator Structure">هيكل الأسانسير</div>
+                                <h5 data-ar="اللمسات النهائية" data-en="Finishing">اللمسات النهائية</h5>
+                                <span data-ar="جاهز للتشغيل" data-en="Ready for Operation">جاهز للتشغيل</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/as8.mp4"></video>
+                            <div class="pgcard-num">8</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="هيكل الأسانسير" data-en="Elevator Structure">هيكل الأسانسير</div>
+                                <h5 data-ar="المشروع مكتملاً" data-en="Completed">المشروع مكتملاً</h5>
+                                <span data-ar="تسليم احترافي" data-en="Professional Handover">تسليم احترافي</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ═══ Egyptian School Football Field ═══ -->
+                <div class="port-group" data-cat="commercial">
+                    <div class="port-group-header">
+                        <div class="port-group-label-tag commercial"><i class="fa-solid fa-store"></i> <span data-ar="تجاري" data-en="Commercial">تجاري</span></div>
+                        <h3 class="port-group-title" data-ar="المدرسة المصرية - ملعب كرة قدم" data-en="Egyptian School - Football Pitch">المدرسة المصرية - ملعب كرة قدم</h3>
+                        <p class="port-group-sub" data-ar="إنشاء ملعب كرة قدم بمواصفات عالية – المدرسة المصرية" data-en="Construction of High-Spec Football Pitch – Egyptian School">إنشاء ملعب كرة قدم بمواصفات عالية – المدرسة المصرية</p>
+                    </div>
+                    <div class="port-group-cards">
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/sc1.mp4"></video>
+                            <div class="pgcard-num">1</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="ملعب كرة قدم" data-en="Football Pitch">ملعب كرة قدم</div>
+                                <h5 data-ar="تجهيز الموقع" data-en="Site Prep">تجهيز الموقع</h5>
+                                <span data-ar="المدرسة المصرية" data-en="Egyptian School">المدرسة المصرية</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/sc2.mp4"></video>
+                            <div class="pgcard-num">2</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="ملعب كرة قدم" data-en="Football Pitch">ملعب كرة قدم</div>
+                                <h5 data-ar="تركيب العشب" data-en="Grass Installation">تركيب العشب</h5>
+                                <span data-ar="عشب اصطناعي معتمد" data-en="Certified Artificial Grass">عشب اصطناعي معتمد</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/sc3.mp4"></video>
+                            <div class="pgcard-num">3</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="ملعب كرة قدم" data-en="Football Pitch">ملعب كرة قدم</div>
+                                <h5 data-ar="تخطيط الملعب" data-en="Marking">تخطيط الملعب</h5>
+                                <span data-ar="تنفيذ دقيق" data-en="Precision Marking">تنفيذ دقيق</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/sc4.mp4"></video>
+                            <div class="pgcard-num">4</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="ملعب كرة قدم" data-en="Football Pitch">ملعب كرة قدم</div>
+                                <h5 data-ar="أعمال الإضاءة" data-en="Lighting">أعمال الإضاءة</h5>
+                                <span data-ar="كشافات ملاعب" data-en="Floodlights">كشافات ملاعب</span>
+                            </div>
+                        </div>
+                        <div class="pgcard">
+                            <video autoplay muted loop playsinline src="/Styles/Photos/sc5.mp4"></video>
+                            <div class="pgcard-num">5</div>
+                            <div class="pgcard-ov">
+                                <div class="port-cat" data-ar="ملعب كرة قدم" data-en="Football Pitch">ملعب كرة قدم</div>
+                                <h5 data-ar="المشروع مكتملاً" data-en="Completed">المشروع مكتملاً</h5>
+                                <span data-ar="جاهز للاستخدام" data-en="Ready for Use">جاهز للاستخدام</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <div class="glow-div"></div>
+
+    <!-- ═══════════════════════════════════════
+  SECTION 5 — ACHIEVEMENTS
+═══════════════════════════════════════ -->
+    <section id="achievements" class="sec">
+        <div class="container">
+            <div class="sec-hd reveal">
+                <div class="eyebrow" data-ar="عوامل القوة" data-en="Key Strengths">عوامل القوة</div>
+                <h2 class="sec-ttl" data-ar="ركائز <span class='gd'>التميز</span> لدينا"
+                    data-en="Our <span class='gd'>Pillars</span> of Excellence">ركائز <span class="gd">التميز</span> لدينا
+                </h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-6 col-md-4 col-lg-4 reveal" style="transition-delay:.1s">
+                    <div class="ach-card">
+                        <div class="ach-ico"><i class="fa-solid fa-building"></i></div>
+                        <div class="ach-l" style="font-size:1.2rem; font-weight:800; margin-top:10px;" data-ar="مشاريع متنوعة" data-en="Diverse Projects">مشاريع متنوعة</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-4 reveal" style="transition-delay:.2s">
+                    <div class="ach-card">
+                        <div class="ach-ico"><i class="fa-solid fa-industry"></i></div>
+                        <div class="ach-l" style="font-size:1.2rem; font-weight:800; margin-top:10px;" data-ar="تنفيذ مشاريع تجارية وصناعية" data-en="Comm. & Industrial Projects">تنفيذ مشاريع تجارية وصناعية</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-4 reveal" style="transition-delay:.3s">
+                    <div class="ach-card">
+                        <div class="ach-ico"><i class="fa-solid fa-gears"></i></div>
+                        <div class="ach-l" style="font-size:1.2rem; font-weight:800; margin-top:10px;" data-ar="حلول متكاملة" data-en="Integrated Solutions">حلول متكاملة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glow-div"></div>
+
+    <!-- ═══════════════════════════════════════
+  SECTION 6 — TECHNICAL SPECS
+═══════════════════════════════════════ -->
+    <section id="technical" class="sec sec-alt">
+        <div class="container">
+            <div class="row align-items-center gy-5">
+                <div class="col-lg-5 reveal-l">
+                    <div class="eyebrow" data-ar="الهندسة الدقيقة" data-en="Precision Engineering">الهندسة الدقيقة</div>
+                    <h2 class="sec-ttl" data-ar="المواصفات <span class='gd'>الفنية</span>"
+                        data-en="Technical <span class='gd'>Specifications</span>">المواصفات <span
+                            class="gd">الفنية</span></h2>
+                    <p style="color:var(--muted);line-height:1.9;margin:16px 0 28px;"
+                        data-ar="نستخدم أرقى المواصفات العالمية ASTM وBSI في تصميم جميع منشآتنا."
+                        data-en="We use the highest international specifications ASTM and BSI in designing all our structures.">
+                        نستخدم أرقى المواصفات العالمية ASTM وBSI في تصميم جميع منشآتنا.</p>
+                    <ul class="spec-list">
+                        <li>
+                            <div class="spec-ico"><i class="fa-solid fa-ruler-combined"></i></div>
+                            <div>
+                                <h6>Rafter</h6>
+                                <p data-ar="العارضة الرئيسية للسقف — تحمل الأحمال الرأسية والأفقية."
+                                    data-en="Main roof beam — carries vertical and horizontal loads.">العارضة الرئيسية
+                                    للسقف — تحمل الأحمال الرأسية والأفقية.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="spec-ico"><i class="fa-solid fa-grip-lines"></i></div>
+                            <div>
+                                <h6>Purlin</h6>
+                                <p data-ar="الروافد الثانوية لتثبيت ألواح السقف وتوزيع الأحمال."
+                                    data-en="Secondary beams for fixing roof panels and distributing loads.">الروافد
+                                    الثانوية لتثبيت ألواح السقف وتوزيع الأحمال.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="spec-ico"><i class="fa-solid fa-border-none"></i></div>
+                            <div>
+                                <h6>Girt</h6>
+                                <p data-ar="الروافد الجانبية لتثبيت ألواح الواجهات الجدارية."
+                                    data-en="Side beams for fixing wall cladding panels.">الروافد الجانبية لتثبيت ألواح
+                                    الواجهات الجدارية.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="spec-ico"><i class="fa-solid fa-columns"></i></div>
+                            <div>
+                                <h6>Column</h6>
+                                <p data-ar="الأعمدة الرئيسية الحاملة للهيكل بالكامل."
+                                    data-en="Main structural columns carrying the entire frame.">الأعمدة الرئيسية
+                                    الحاملة للهيكل بالكامل.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="spec-ico"><i class="fa-solid fa-link"></i></div>
+                            <div>
+                                <h6>Bracing</h6>
+                                <p data-ar="شبكة التقوية لمقاومة قوى الرياح والزلازل."
+                                    data-en="Bracing system to resist wind and seismic forces.">شبكة التقوية لمقاومة قوى
+                                    الرياح والزلازل.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-7 reveal-r">
+                    <div class="spec-wrap">
+                        <div style="position:relative;display:inline-block;width:100%;">
+                            <img src="/Styles/Photos/technical_diagram.png" class="spec-img"
+                                alt="Steel Frame Diagram" style="width:100%;border-radius:8px;" loading="lazy">
+                            <!-- Hotspots -->
+                            <div class="hotspot" style="top:22%;left:50%;transform:translateX(-50%);" tabindex="0">
+                            </div>
+                            <div class="hs-tip" style="top:14%;left:55%;" data-ar="Rafter — العارضة الرئيسية للسقف"
+                                data-en="Rafter — Main Roof Beam">Rafter — العارضة الرئيسية للسقف</div>
+
+                            <div class="hotspot" style="top:55%;left:12%;" tabindex="0"></div>
+                            <div class="hs-tip" style="top:47%;left:18%;" data-ar="Column — العمود الحامل"
+                                data-en="Column — Load Bearing">Column — العمود الحامل</div>
+
+                            <div class="hotspot" style="top:33%;left:75%;" tabindex="0"></div>
+                            <div class="hs-tip" style="top:25%;left:50%;" data-ar="Purlin — رافد السقف"
+                                data-en="Purlin — Roof Purlin">Purlin — رافد السقف</div>
+
+                            <div class="hotspot" style="top:68%;left:82%;" tabindex="0"></div>
+                            <div class="hs-tip" style="top:60%;left:45%;" data-ar="Girt — رافد الواجهة"
+                                data-en="Girt — Wall Girt">Girt — رافد الواجهة</div>
+
+                            <div class="hotspot" style="top:45%;left:38%;" tabindex="0"></div>
+                            <div class="hs-tip" style="top:37%;left:42%;" data-ar="Bracing — نظام التقوية"
+                                data-en="Bracing — Stabilizer">Bracing — نظام التقوية</div>
+                        </div>
+                        <p style="color:var(--muted);font-size:.82rem;margin-top:14px;text-align:center;"
+                            data-ar="مرر الفأرة على النقاط الذهبية لمعرفة تفاصيل كل مكون هيكلي."
+                            data-en="Hover over the golden dots to learn details about each structural component.">مرر
+                            الفأرة على النقاط الذهبية لمعرفة تفاصيل كل مكون هيكلي.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glow-div"></div>
+
+    <!-- ═══════════════════════════════════════
+  SECTION 7 — CERTIFICATIONS
+═══════════════════════════════════════ -->
+    <section id="certifications" class="sec">
+        <div class="container">
+            <div class="sec-hd reveal">
+                <div class="eyebrow" data-ar="الاعتمادات والشهادات" data-en="Accreditations & Certifications">الاعتمادات
+                    والشهادات</div>
+                <h2 class="sec-ttl" data-ar="شهاداتنا <span class='gd'>الدولية</span>"
+                    data-en="Our <span class='gd'>International</span> Certifications">شهاداتنا <span
+                        class="gd">الدولية</span></h2>
+                <p class="sec-dsc" data-ar="نحمل أعلى الاعتمادات الدولية ضماناً للجودة والسلامة والبيئة."
+                    data-en="We hold the highest international accreditations to guarantee quality, safety, and environmental standards.">
+                    نحمل أعلى الاعتمادات الدولية ضماناً للجودة والسلامة والبيئة.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.1s">
+                    <div class="cert-card">
+                        <div class="cert-ico"><i class="fa-solid fa-flask"></i></div>
+                        <h5>ASTM International</h5>
+                        <p data-ar="معايير المواد والاختبارات الأمريكية — مرجع عالمي للفولاذ الإنشائي."
+                            data-en="American materials and testing standards — global reference for structural steel.">
+                            معايير المواد والاختبارات الأمريكية — مرجع عالمي للفولاذ الإنشائي.</p>
+                        <span class="cert-badge" data-ar="متوافق" data-en="Compliant">متوافق</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.2s">
+                    <div class="cert-card">
+                        <div class="cert-ico"><i class="fa-solid fa-crown"></i></div>
+                        <h5>BSI Standards</h5>
+                        <p data-ar="المعايير البريطانية — أعلى مرجع هندسي معترف به دولياً."
+                            data-en="British Standards — the highest internationally recognized engineering reference.">
+                            المعايير البريطانية — أعلى مرجع هندسي معترف به دولياً.</p>
+                        <span class="cert-badge" data-ar="متوافق" data-en="Compliant">متوافق</span>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 reveal" style="transition-delay:.3s">
+                    <div class="cert-card">
+                        <div class="cert-ico"><i class="fa-solid fa-award"></i></div>
+                        <h5 data-ar="سجل تجاري عماني" data-en="Omani Commercial Registry">سجل تجاري عماني</h5>
+                        <p data-ar="شركة مرخصة ومسجلة رسمياً في سلطنة عمان وفق الأنظمة المعمول بها."
+                            data-en="A licensed company officially registered in the Sultanate of Oman per applicable regulations.">
+                            شركة مرخصة ومسجلة رسمياً في سلطنة عمان وفق الأنظمة المعمول بها.</p>
+                        <span class="cert-badge" data-ar="مرخصة" data-en="Licensed">مرخصة</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glow-div"></div>
+
+    <!-- ═══════════════════════════════════════
+  SECTION 8 — WHY US + TIMELINE
+═══════════════════════════════════════ -->
+    <section id="why" class="sec sec-alt">
+        <div class="container">
+            <div class="sec-hd reveal">
+                <div class="eyebrow" data-ar="ميزتنا" data-en="Our Edge">ميزتنا</div>
+                <h2 class="sec-ttl" data-ar="لماذا تختار <span class='gd'>الرضوان</span>؟"
+                    data-en="Why Choose <span class='gd'>Al Radwan</span>?">لماذا تختار <span class="gd">الرضوان</span>؟
+                </h2>
+            </div>
+            <div class="row gy-5">
+                <div class="col-lg-6 reveal-l">
+                    <div class="why-card">
+                        <div class="why-ico"><i class="fa-solid fa-bolt"></i></div>
+                        <div>
+                            <h5 data-ar="تسليم في الوقت المحدد" data-en="On-Time Delivery">تسليم في الوقت المحدد</h5>
+                            <p data-ar="نلتزم بجداول زمنية محددة ونضمن تسليم مشاريعنا في الموعد المتفق عليه دون تأخير."
+                                data-en="We adhere to specific timelines and guarantee project delivery on the agreed date without delay.">
+                                نلتزم بجداول زمنية محددة ونضمن تسليم مشاريعنا في الموعد المتفق عليه دون تأخير.</p>
+                        </div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-ico"><i class="fa-solid fa-dollar-sign"></i></div>
+                        <div>
+                            <h5 data-ar="أسعار تنافسية" data-en="Competitive Pricing">أسعار تنافسية</h5>
+                            <p data-ar="نقدم أفضل قيمة مقابل المال مع الحفاظ على أعلى معايير الجودة في كل تفصيلة."
+                                data-en="We offer the best value for money while maintaining the highest quality standards in every detail.">
+                                نقدم أفضل قيمة مقابل المال مع الحفاظ على أعلى معايير الجودة في كل تفصيلة.</p>
+                        </div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-ico"><i class="fa-solid fa-headset"></i></div>
+                        <div>
+                            <h5 data-ar="دعم ما بعد البيع" data-en="After-Sales Support">دعم ما بعد البيع</h5>
+                            <p data-ar="فريقنا متاح على مدار الساعة لتقديم الدعم الفني والصيانة بعد الاستلام."
+                                data-en="Our team is available around the clock for technical support and maintenance after handover.">
+                                فريقنا متاح على مدار الساعة لتقديم الدعم الفني والصيانة بعد الاستلام.</p>
+                        </div>
+                    </div>
+                    <div class="why-card">
+                        <div class="why-ico"><i class="fa-solid fa-earth-asia"></i></div>
+                        <div>
+                            <h5 data-ar="خبرة إقليمية" data-en="Regional Expertise">خبرة إقليمية</h5>
+                            <p data-ar="فهم عميق لمتطلبات السوق العماني والخليجي وخصوصية بيئة العمل المحلية."
+                                data-en="Deep understanding of Omani and Gulf market requirements and the specifics of the local work environment.">
+                                فهم عميق لمتطلبات السوق العماني والخليجي وخصوصية بيئة العمل المحلية.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 reveal-r">
+                    <h4 style="font-weight:800;color:#fff;margin-bottom:10px;" data-ar="مسيرة الإنجاز"
+                        data-en="Our Journey">مسيرة الإنجاز</h4>
+                    <p style="color:var(--gold); font-weight:600; margin-bottom:30px;" data-ar="خبرات فريقنا تمتد لأكثر من 15 عامًا" data-en="Our team's expertise spans over 15 years">خبرات فريقنا تمتد لأكثر من 15 عامًا</p>
+                    <div class="timeline">
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <h6 data-ar="التأسيس" data-en="Foundation">التأسيس</h6>
+                            <p data-ar="تأسيس شركة الرضوان العالمية للاستثمار في سلطنة عمان."
+                                data-en="Establishment of Al Radwan International Investment in Oman.">
+                                تأسيس شركة الرضوان العالمية للاستثمار في سلطنة عمان.</p>
+                        </div>
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-year">2023</div>
+                            <h6 data-ar="الانطلاق بالمشاريع" data-en="Project Launch">الانطلاق بالمشاريع</h6>
+                            <p data-ar="بدء تنفيذ المشاريع التجارية والصناعية وأعمال التشطيبات."
+                                data-en="Starting execution of commercial and industrial projects and finishing works.">
+                                بدء تنفيذ المشاريع التجارية والصناعية وأعمال التشطيبات.</p>
+                        </div>
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-year">2024</div>
+                            <h6 data-ar="التوسع في الحلول الصناعية" data-en="Industrial Solutions Expansion">التوسع في الحلول الصناعية</h6>
+                            <p data-ar="التوسع في الهياكل المعدنية وغرف التبريد وأنظمة التخزين."
+                                data-en="Expansion in steel structures, cold rooms, and storage systems.">
+                                التوسع في الهياكل المعدنية وغرف التبريد وأنظمة التخزين.</p>
+                        </div>
+                        <div class="tl-item">
+                            <div class="tl-dot"></div>
+                            <div class="tl-year">2025</div>
+                            <h6 data-ar="تطوير الخدمات المتكاملة" data-en="Integrated Services Development">تطوير الخدمات المتكاملة</h6>
+                            <p data-ar="تقديم حلول متكاملة تشمل التصميم والتنفيذ والتوريد."
+                                data-en="Providing integrated solutions including design, execution, and supply.">
+                                تقديم حلول متكاملة تشمل التصميم والتنفيذ والتوريد.</p>
+                        </div>
+                        <div class="tl-item">
+                            <div class="tl-dot" style="background:var(--teal);"></div>
+                            <div class="tl-year" style="color:var(--gold);">2026</div>
+                            <h6 data-ar="مرحلة النمو" data-en="Growth Phase">مرحلة النمو</h6>
+                            <p data-ar="التوسع نحو المشاريع الكبرى والحلول الصناعية المتقدمة."
+                                data-en="Expanding towards major projects and advanced industrial solutions.">
+                                التوسع نحو المشاريع الكبرى والحلول الصناعية المتقدمة.</p>
+                        </div>
+                    </div>
+                    <div class="trust-badges mt-4 d-flex gap-3 flex-wrap">
+                        <div class="badge-item d-flex align-items-center gap-2" style="background:rgba(193,158,80,.1); padding:8px 15px; border-radius:20px; border:1px solid rgba(193,158,80,.3);">
+                            <i class="fa-solid fa-check-circle" style="color:var(--gold);"></i>
+                            <span data-ar="مصداقية" data-en="Credibility" style="color:#fff; font-weight:600; font-size:0.9rem;">مصداقية</span>
+                        </div>
+                        <div class="badge-item d-flex align-items-center gap-2" style="background:rgba(193,158,80,.1); padding:8px 15px; border-radius:20px; border:1px solid rgba(193,158,80,.3);">
+                            <i class="fa-solid fa-briefcase" style="color:var(--gold);"></i>
+                            <span data-ar="احترافية" data-en="Professionalism" style="color:#fff; font-weight:600; font-size:0.9rem;">احترافية</span>
+                        </div>
+                        <div class="badge-item d-flex align-items-center gap-2" style="background:rgba(193,158,80,.1); padding:8px 15px; border-radius:20px; border:1px solid rgba(193,158,80,.3);">
+                            <i class="fa-solid fa-handshake" style="color:var(--gold);"></i>
+                            <span data-ar="ثقة" data-en="Trust" style="color:#fff; font-weight:600; font-size:0.9rem;">ثقة</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="glow-div"></div>
+
+    <!-- ═══════════════════════════════════════
+  SECTION 9 — CONTACT
+═══════════════════════════════════════ -->
+    <section id="contact" class="sec">
+        <div class="container">
+            <div class="sec-hd reveal">
+                <div class="eyebrow" data-ar="تواصل معنا" data-en="Get in Touch">تواصل معنا</div>
+                <h2 class="sec-ttl" data-ar="نحن هنا <span class='gd'>لخدمتك</span>"
+                    data-en="We're Here <span class='gd'>for You</span>">نحن هنا <span class="gd">لخدمتك</span></h2>
+                <p class="sec-dsc" data-ar="للاستفسار عن مشاريعكم أو طلب عرض سعر، تواصلوا معنا."
+                    data-en="For inquiries about your projects or to request a quote, contact us.">للاستفسار عن مشاريعكم
+                    أو طلب عرض سعر، تواصلوا معنا.</p>
+            </div>
+            <div class="row gy-4">
+                <div class="col-lg-5 reveal-l">
+                    <div class="contact-card">
+                        <div class="contact-info-item">
+                            <div class="cinfo-ico"><i class="fa-solid fa-location-dot"></i></div>
+                            <div>
+                                <div class="cinfo-lbl" data-ar="الموقع" data-en="Location">الموقع</div>
+                                <div class="cinfo-val" data-ar="مسقط، المعبيلة، سلطنة عمان"
+                                    data-en="Muscat, Al Mabila, Sultanate of Oman">مسقط، المعبيلة، سلطنة عمان</div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="cinfo-ico"><i class="fa-solid fa-phone"></i></div>
+                            <div>
+                                <div class="cinfo-lbl" data-ar="الهاتف" data-en="Phone">الهاتف</div>
+                                <div class="cinfo-val" dir="ltr">+968 9700 0326 / +968 9118 9022</div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="cinfo-ico"><i class="fa-solid fa-envelope"></i></div>
+                            <div>
+                                <div class="cinfo-lbl" data-ar="البريد الإلكتروني" data-en="Email">البريد الإلكتروني
+                                </div>
+                                <div class="cinfo-val">Alradwan.resa21@outlook.sa</div>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="cinfo-ico"><i class="fa-solid fa-clock"></i></div>
+                            <div>
+                                <div class="cinfo-lbl" data-ar="ساعات العمل" data-en="Working Hours">ساعات العمل</div>
+                                <div class="cinfo-val" data-ar="الأحد – الخميس: 8ص – 5م" data-en="Sun – Thu: 8AM – 5PM">
+                                    الأحد – الخميس: 8ص – 5م</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:10px;margin-top:24px;">
+                            <a href="https://wa.me/96897000326" target="_blank"
+                                style="flex:1;background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.3);color:#25D366;padding:12px;border-radius:8px;text-align:center;text-decoration:none;font-weight:700;font-size:.9rem;transition:all .3s;"
+                                onmouseover="this.style.background='rgba(37,211,102,.25)'"
+                                onmouseout="this.style.background='rgba(37,211,102,.15)'">
+                                <i class="fa-brands fa-whatsapp me-2"></i>WhatsApp
+                            </a>
+                            <a href="mailto:Alradwan.resa21@outlook.sa"
+                                style="flex:1;background:rgba(193,158,80,.1);border:1px solid rgba(193,158,80,.3);color:var(--gold);padding:12px;border-radius:8px;text-align:center;text-decoration:none;font-weight:700;font-size:.9rem;transition:all .3s;"
+                                onmouseover="this.style.background='rgba(193,158,80,.2)'"
+                                onmouseout="this.style.background='rgba(193,158,80,.1)'">
+                                <i class="fa-solid fa-envelope me-2"></i><span data-ar="بريد"
+                                    data-en="Email">بريد</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7 reveal-r">
+                    <div class="contact-card">
+                        <h4 style="font-weight:800;margin-bottom:24px;color:#fff;" data-ar="أرسل لنا رسالة"
+                            data-en="Send Us a Message">أرسل لنا رسالة</h4>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <input type="text" class="form-ctrl" placeholder="" id="inp-name">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="tel" class="form-ctrl" placeholder="" id="inp-phone" dir="ltr">
+                            </div>
+                            <div class="col-12">
+                                <input type="email" class="form-ctrl" placeholder="" id="inp-email" dir="ltr">
+                            </div>
+                            <div class="col-12">
+                                <select class="form-ctrl" id="inp-service">
+                                    <option value="" data-ar="— نوع الخدمة المطلوبة —"
+                                        data-en="— Type of Service Required —">— نوع الخدمة المطلوبة —</option>
+                                    <option data-ar="منشآت فولاذية" data-en="Steel Structures">منشآت فولاذية</option>
+                                    <option data-ar="أنظمة الأرفف" data-en="Racking Systems">أنظمة الأرفف</option>
+                                    <option data-ar="غرف التبريد" data-en="Cold Rooms">غرف التبريد</option>
+                                    <option data-ar="تصميم هندسي" data-en="Engineering Design">تصميم هندسي</option>
+                                    <option data-ar="أخرى" data-en="Other">أخرى</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <textarea class="form-ctrl" id="inp-msg" placeholder=""></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn-gd" style="width:100%;justify-content:center;" onclick="sendForm()">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    <span data-ar="إرسال الرسالة" data-en="Send Message">إرسال الرسالة</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+  SECTION 10 — FOOTER
+═══════════════════════════════════════ -->
+    <footer>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4 mb-3">
+                    <div style="display:flex;align-items:center;gap:12px;margin-bottom:18px;">
+                        <div
+                            style="width:48px;height:48px;background:linear-gradient(135deg,#8F7234,#C19E50,#3A8B55);border-radius:10px;display:flex;align-items:center;justify-content:center;">
+                            <i class="fa-solid fa-building-columns" style="font-size:1.3rem;color:#0F1216;"></i>
+                        </div>
+                        <div>
+                            <div style="font-weight:900;color:var(--gold);font-size:1.1rem;" data-ar="الرضوان العالمية"
+                                data-en="AL Radwan Int'l">الرضوان العالمية</div>
+                            <div style="font-size:.72rem;color:var(--teal);font-weight:600;" data-ar="للاستثمار"
+                                data-en="Investment">للاستثمار</div>
+                        </div>
+                    </div>
+                    <p style="color:var(--muted);font-size:.88rem;line-height:1.8;"
+                        data-ar="شريكك الموثوق في عالم الإنشاءات الفولاذية. نقدم الجودة، الأمان، والابتكار في كل مشروع نقوم بتنفيذه في سلطنة عمان."
+                        data-en="Your trusted partner in the world of steel construction. We deliver quality, safety, and innovation in every project we execute in Oman.">
+                        شريكك الموثوق في عالم الإنشاءات الفولاذية. نقدم الجودة، الأمان، والابتكار في كل مشروع نقوم
+                        بتنفيذه في سلطنة عمان.</p>
+                    <div class="social-links mt-3">
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h5 data-ar="روابط سريعة" data-en="Quick Links">روابط سريعة</h5>
+                    <ul style="list-style:none;">
+                        <li><a href="#home" data-ar="الرئيسية" data-en="Home">الرئيسية</a></li>
+                        <li><a href="#about" data-ar="عن الشركة" data-en="About Us">عن الشركة</a></li>
+                        <li><a href="#services" data-ar="خدماتنا" data-en="Services">خدماتنا</a></li>
+                        <li><a href="#projects" data-ar="أعمالنا" data-en="Portfolio">أعمالنا</a></li>
+                        <li><a href="#contact" data-ar="تواصل" data-en="Contact">تواصل</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-3">
+                    <h5 data-ar="خدماتنا" data-en="Our Services">خدماتنا</h5>
+                    <ul style="list-style:none;">
+                        <li><a href="#services" data-ar="المنشآت الجاهزة (PEB)"
+                                data-en="Pre-Engineered Buildings (PEB)">المنشآت الجاهزة (PEB)</a></li>
+                        <li><a href="#services" data-ar="الأنظمة التقليدية" data-en="Conventional Systems">الأنظمة
+                                التقليدية</a></li>
+                        <li><a href="#services" data-ar="أنظمة الأرفف" data-en="Racking Systems">أنظمة الأرفف</a></li>
+                        <li><a href="#services" data-ar="التصميم الهندسي" data-en="Engineering Design">التصميم
+                                الهندسي</a></li>
+                        <li><a href="#services" data-ar="غرف التبريد" data-en="Cold Rooms">غرف التبريد</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3">
+                    <h5 data-ar="تواصل معنا" data-en="Contact Us">تواصل معنا</h5>
+                    <ul style="list-style:none;">
+                        <li style="display:flex;gap:10px;margin-bottom:10px;align-items:flex-start;">
+                            <i class="fa-solid fa-location-dot"
+                                style="color:var(--gold);margin-top:3px;font-size:.9rem;"></i>
+                            <span style="color:var(--muted);font-size:.85rem;" data-ar="مسقط، المعبيلة، سلطنة عمان"
+                                data-en="Muscat, Al Mabila, Oman">مسقط، المعبيلة، سلطنة عمان</span>
+                        </li>
+                        <li style="display:flex;gap:10px;margin-bottom:10px;align-items:center;">
+                            <i class="fa-solid fa-phone" style="color:var(--gold);font-size:.9rem;"></i>
+                            <span style="color:var(--muted);font-size:.85rem;" dir="ltr">+968 9700 0326</span>
+                        </li>
+                        <li style="display:flex;gap:10px;align-items:center;">
+                            <i class="fa-solid fa-envelope" style="color:var(--gold);font-size:.9rem;"></i>
+                            <span
+                                style="color:var(--muted);font-size:.82rem;word-break:break-all;">Alradwan.resa21@outlook.sa</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>
+                <span data-ar="جميع الحقوق محفوظة 2026 © شركة الرضوان العالمية للاستثمار"
+                    data-en="All Rights Reserved 2026 © AL Radwan International Investment">جميع الحقوق محفوظة 2026 © شركة الرضوان العالمية للاستثمار</span>
+                &nbsp;|&nbsp;
+                <span style="font-size:.8rem;" data-ar="تم التصميم بواسطة" data-en="Designed by">تم التصميم بواسطة</span>
+                <a href="https://www.facebook.com/profile.php?id=100090592885243&locale=ar_AR" target="_blank" style="color:var(--gold);font-weight:700;text-decoration:none;">GMTWEB</a>
+احتراف</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="vmodal">
+        <span class="vmodal-close" id="closeVideoModal">&times;</span>
+        <div class="vmodal-content">
+            <video id="modalVideo" controls></video>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
